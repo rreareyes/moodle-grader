@@ -6,9 +6,10 @@
 # it has embeded the student ID for the assignment.
 # 
 # Additionally, it exports a .csv file with the grades from each student in the
-# correct format to upload as the grading worksheet in Moodle.
-
-
+# correct format to upload as the grading worksheet in Moodle. The naming 
+# convention should be:
+# First Last_assignmentID_assignsubmission_file_whatevernameyouwantforthefile.pdf
+# Ramiro Rea_8818222_assignsubmission_file_HW1_grade.pdf (or docx, xlsx)
 
 # Get the base files ####
 library(tidyverse)

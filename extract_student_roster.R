@@ -1,3 +1,6 @@
+# This script generates a general roster for the class to use as the base
+# dataset to link the student name, lab section and later the Moodle ID for
+# each assignment.
 
 # Load packages -----------------------------------------------------------
 library(tidyverse)

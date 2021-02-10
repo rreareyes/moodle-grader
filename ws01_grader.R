@@ -1,4 +1,14 @@
-# PSYCH 240 HW4 Grader
+# This script creates a pdf report based on a qualtrics rubric. It has to be
+# tailored for the specific assignment and the number and name of the questions
+# on it. The naming for the feedback files follows the guidelines from Moodle
+# that allow to add them to a zip file and then upload in one go. It needs this
+# naming convention so Moodle can recognize to which student it belongs, since
+# it has embeded the student ID for the assignment.
+# 
+# Additionally, it exports a .csv file with the grades from each student in the
+# correct format to upload as the grading worksheet in Moodle.
+
+
 
 # Get the base files ####
 library(tidyverse)
@@ -9,7 +19,6 @@ library(kableExtra)
 folder_root   <- dirname(rstudioapi::getActiveDocumentContext()$path)
 folder_data   <- file.path(folder_root, "Data")
 folder_grades <- file.path(folder_root, "Feedback")
-
 
 # Load the survey data ----------------------------------------------------
 raw_survey <- read.csv(file      = file.path(folder_data, "ws01_rubric.csv"), 
@@ -81,8 +90,6 @@ point_key <- tibble("question" = c("q02a", "q02b", "q03a", "q03b", "q04a", "q04b
                                 1, 1, 1, 1, 1, 1, 
                                 1)
                     )
-
-
 
 # Create final comments for students with little feedback -----------------
 good_comments <- c("Great job!", "Everything looks fine, good job!", "Nice work!",
